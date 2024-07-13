@@ -31,14 +31,6 @@ run = True
 
 moving = False
 
-velocity = 12
-
-x = 800
-y = 150
-
-#34*sin von Grad/365*x   34*cos von Grad/365*y
-#formel für kreisbewegung
-
 angle1 = 0
 angle2 = 0
 
@@ -77,37 +69,9 @@ while run:
 	pygame.display.update()
 	window.fill((0, 0, 0))
 	sleep(0.1)
-	
-	
- 
+
 	angle1 += 0.1
-	# for i in range(100, 0, -8):
-	# 	x -= 8
-	# 	y += 8
-	# 	sleep(0.1)
-	# 	image = pygame.transform.scale(image, (180, 180))
-	# 	window.blit(image, (x, y))
-	# 	pygame.display.update()
-	# 	window.fill((0, 0, 0))
-
-	# for i in range(100, 0, -8):
-	# 	x += 8
-	# 	y += 8
-	# 	sleep(0.1)
-	# 	image = pygame.transform.scale(image, (180, 180))
-	# 	window.blit(image, (x, y))
-	# 	pygame.display.update()
-	# 	window.fill((0, 0, 0))
-  
-	# for i in range(100, 0, -8):
-	# 	x += 8
-	# 	y -= 8
-	# 	sleep(0.1)
-	# 	image = pygame.transform.scale(image, (180, 180))
-	# 	window.blit(image, (x, y))
-	# 	pygame.display.update()
-	# 	window.fill((0, 0, 0))
-
+ 
 	for event in pygame.event.get():
 
 		if event.type == pygame.QUIT:
@@ -115,17 +79,4 @@ while run:
 			pygame.quit()
 			quit()
 
-		if event.type == pygame.KEYUP:
-
-			if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-				moving = False
-				value = 0
-	key_pressed_is = pygame.key.get_pressed()
-
-
-
-	# window.blit(image, (x, y))
-
 	pygame.display.update()
-
-	# window.fill((0, 0, 0))
