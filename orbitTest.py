@@ -5,12 +5,18 @@ import math
     
 pygame.init()
 
-window = pygame.display.set_mode((600, 600))
-
-image1 = pygame.image.load("./sun.png")				
-image2 = pygame.image.load("./merkur.png")
-image = image1
-image = pygame.transform.scale(image, (180, 180))
+window = pygame.display.set_mode((2000, 2000))
+planets = [
+		(pygame.image.load("./img/sun.png")),
+		(pygame.image.load("./img/mercury.png")),
+		(pygame.image.load("./img/venus.png")),
+		(pygame.image.load("./img/earth.png")),
+		(pygame.image.load("./img/mars.png")),
+		(pygame.image.load("./img/jupiter.png")),
+		(pygame.image.load("./img/saturn.png")),
+		(pygame.image.load("./img/uranus.png")),
+		(pygame.image.load("./img/neptune.png"))
+		]
 
 
 clock = pygame.time.Clock()
@@ -37,9 +43,14 @@ angle1 = 0
 angle2 = 0
 
 while run:
-
-	clock.tick(180)
-	x = 100
+	#move mercury around sun
+	x = 100 
+	y = 100
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
+	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
 	y = 100
 	x = int(x*math.cos(angle1)+300)
 	y = int(y*math.sin(angle1)+300)
