@@ -42,7 +42,24 @@ y = 150
 angle1 = 0
 angle2 = 0
 
+
 while run:
+	clock.tick(120)
+
+	#add sun
+	
+	"""
+	explanation of coordinates:
+	- x/y: radius of orbit aound sun
+	- +[value]: coordinates - center of orbit
+		=> coordintes of top left corner of the image
+		=> center of the image is at (x + x-scale| y + y-scale)
+		=> center of the orbit is at (750 + (sun)x-scale/2 | 450 + (sun)y-scale/2)
+		=> to aling image in the orbit and let it spin around the sun: (sun-coordinates + radius of orbit - image-scale/2)
+	- angle1: angle of rotation
+	
+	"""
+
 	#move mercury around sun
 	x = 100 
 	y = 100
