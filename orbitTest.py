@@ -21,9 +21,10 @@ planets = [
 
 clock = pygame.time.Clock()
 
-resolution = (1500,1500)
-pygame.display.set_mode(resolution, pygame.FULLSCREEN)
-
+resolution = (2000,2000)
+# pygame.display.set_mode(resolution, pygame.RESIZABLE)
+# pygame.display.set_mode(resolution, pygame.FULLSCREEN)
+pygame.display.set_caption('Solar System')
 
 value = 0
 
@@ -60,14 +61,75 @@ while run:
 	mercury = pygame.transform.scale(planets[1], (30, 30))
 	window.fill((0, 0, 0))
 	window.blit(mercury, (x, y))
+ 
+	x = 100 
 	y = 100
-	x = int(x*math.cos(angle1)+300)
-	y = int(y*math.sin(angle1)+300)
-	print(x, y)
-	image = pygame.transform.scale(image, (180, 180))
-	window.blit(image, (x, y))
-	pygame.display.update()
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
 	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
+ 
+	x = 100 
+	y = 100
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
+	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
+ 
+	x = 100 
+	y = 100
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
+	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
+ 
+	x = 100 
+	y = 100
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
+	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
+ 
+	x = 100 
+	y = 100
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
+	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
+ 
+	x = 100 
+	y = 100
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
+	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
+ 
+	x = 100 
+	y = 100
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
+	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
+ 
+	x = 100 
+	y = 100
+	x = int(x*math.cos(angle1)+835) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	y = int(y*math.sin(angle1)+535) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle1: angle of rotation
+	mercury = pygame.transform.scale(planets[1], (30, 30))
+	window.fill((0, 0, 0))
+	window.blit(mercury, (x, y))
+ 
+	x=750
+	y=450
+	sun = pygame.transform.scale(planets[0] , (200, 200))
+	window.blit(sun, (x, y))
 	sleep(0.1)
 
 	angle1 += 0.1
