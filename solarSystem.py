@@ -15,7 +15,8 @@ planets = [
 		(pygame.image.load("./img/jupiter.png")),	#5
 		(pygame.image.load("./img/saturn.png")),	#6
 		(pygame.image.load("./img/uranus.png")),	#7
-		(pygame.image.load("./img/neptune.png"))	#8
+		(pygame.image.load("./img/neptune.png")),	#8
+		(pygame.image.load("./img/moon.png"))		#9
 		]
 
 
@@ -28,7 +29,7 @@ pygame.display.set_caption('Solar System')
 value = 0
 
 run = True
-
+show_moon = True
 moving = False
 pause = False
 
@@ -40,6 +41,7 @@ speed_multiplier = 1
 angle_mercury = degree_preset * 180		# CONFIG angle: 300
 angle_venus = degree_preset * 270		# CONFIG angle: 270
 angle_earth = degree_preset * 105		# CONFIG angle: 105
+angle_moon = degree_preset * 0			# CONFIG angle: 0
 angle_mars = degree_preset * 345		# CONFIG angle: 345
 angle_jupiter = degree_preset * 210		# CONFIG angle: 210
 angle_saturn = degree_preset * 30		# CONFIG angle: 30
@@ -56,6 +58,7 @@ sun_y = 470
 radius_mercury = 200
 radius_venus = 250 
 radius_earth = 300 
+radius_moon = 50
 radius_mars = 350 
 radius_jupiter = 400 
 radius_saturn = 450 
@@ -67,6 +70,7 @@ scale_sun = 280 # Real diameter: 1'392'000 km
 scale_mercury = 4 # Real diameter: 4'879 km
 scale_venus = 12 # Real diameter: 12'104 km
 scale_earth = 12 # Real diameter: 12'756 km
+scale_moon = 3.4 # Real diameter: 3'474 km
 scale_mars = 6 # Real diameter: 6'792 km
 scale_jupiter = 139 # Real diameter: 139'820 km
 scale_saturn = 116 # Real diameter: 116'460 km
@@ -125,7 +129,14 @@ while run:
 	y_center = sun_y + scale_sun/2 - scale_earth/2
 	x = (x * math.cos(angle_earth) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_earth: angle of rotation
 	y = (y * math.sin(angle_earth) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_earth: angle of rotation
-	window.blit(earth, (x, y))
+	window.blit(earth, (x - scale_earth/2, y - scale_earth/2))
+
+
+	if show_moon:
+		moon = pygame.transform.scale(planets[9], (scale_moon + scale_summand/1.5 , scale_moon + scale_summand/1.5))
+		x = (radius_moon * math.cos(angle_moon) + x) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_moon: angle of rotation
+		y = (radius_moon * math.sin(angle_moon) + y) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_moon: angle of rotation
+		window.blit(moon, (x - scale_moon/2, y - scale_moon/2))
 
 
 	x = radius_mars
