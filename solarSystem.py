@@ -2,7 +2,26 @@ import pygame
 from pygame.locals import *
 from time import sleep
 import math
-    
+  
+
+#todo:
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#planet rotation circles
+
+
+  
 pygame.init()
 
 window = pygame.display.set_mode((2000, 2000))
@@ -26,16 +45,24 @@ resolution = (2000,2000)
 pygame.display.set_mode(resolution, pygame.FULLSCREEN)
 pygame.display.set_caption('Solar System')
 
-value = 0
 
+#variables for calculations
 run = True
 show_moon = True
 moving = False
 pause = False
-
+real_distance = False
 degree_preset = math.pi/180
-dist_around_sun = math.pi*2
+circumnavigation = math.pi*2
 speed_multiplier = 1
+real_scale = False
+scale_summand = 0
+
+
+#position sun
+sun_x = 900
+sun_y = 470
+
 
 # Create angle variables for each planet
 angle_mercury = degree_preset * 180		# CONFIG angle: 300
@@ -47,11 +74,6 @@ angle_jupiter = degree_preset * 210		# CONFIG angle: 210
 angle_saturn = degree_preset * 30		# CONFIG angle: 30
 angle_uranus = degree_preset * 195		# CONFIG angle: 195
 angle_neptune = degree_preset * 240 	# CONFIG angle: 240
-
-
-#position sun
-sun_x = 900
-sun_y = 470
 
 
 #planet radius 
