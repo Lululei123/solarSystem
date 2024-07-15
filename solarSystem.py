@@ -305,7 +305,7 @@ while run:
 					real_scale = False
 					scale_summand = scale_temp
 				#real size
-				else:
+				elif not real_scale and not real_distance:
 					scale_sun = 1392000 / 4000
 					scale_mercury = 4879 / 4000
 					scale_venus = 12104 / 4000
@@ -350,7 +350,7 @@ while run:
      
 					show_moon = False
 					real_distance = True
-				else:
+				elif real_distance and not real_scale:
 					radius_mercury = 200
 					radius_venus = 250 
 					radius_earth = 300 
