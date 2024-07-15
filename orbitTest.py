@@ -30,7 +30,7 @@ value = 0
 run = True
 
 moving = False
-
+pause = False
 
 degree_preset = math.pi/180
 dist_around_sun = math.pi*2
@@ -77,12 +77,14 @@ scale_neptune = 49 # Real diameter: 49'244 km
 
 while run:
 	clock.tick(120)
-	#create introduction screen explaining the controls
-	# r = real size
-	# alt + f4 = close
-	# esc = close
-	# space = pause
-	#add sun
+	# while not read:
+		#create introduction screen explaining the controls
+		# r = real size
+		# alt + f4 = close
+		# esc = close
+		# space = pause
+		# right arrow = speed up
+		# left arrow = speed down
 	
 	"""
 	explanation of coordinates:
@@ -95,7 +97,6 @@ while run:
 	- angle1: angle of rotation
 	
 	"""
-	#move mercury around sun
 	x = radius_mercury
 	y = radius_mercury
 	mercury = pygame.transform.scale(planets[1], (scale_mercury , scale_mercury))
@@ -210,8 +211,36 @@ while run:
  
 	for event in pygame.event.get():
 		#if r key is pressed make the planets in real size_scale
-		#if right arrow key is pressed increase the speed of the planets
-		#if left arrow key is pressed decrease the speed of the planets
+		if event.type == KEYDOWN:
+			
+			#speed up
+			if event.key == K_RIGHT:
+				speed_multiplier += 0.1
+				if speed_multiplier > 10:
+					speed_multiplier = 10
+
+			#speed down
+			elif event.key == K_LEFT:
+				speed_multiplier -= 0.1
+				if speed_multiplier < 0:
+					speed_multiplier = 0
+			
+			#pause
+			elif event.key == K_SPACE:
+				if not pause:
+					temp = speed_multiplier
+					speed_multiplier = 0
+					pause = True
+				elif pause:
+					speed_multiplier = temp
+					pause = False
+     
+			#close
+			elif event.key == K_ESCAPE:
+				run = False
+				pygame.quit()
+				quit()
+     
 		if event.type == pygame.QUIT:
 			run = False
 			pygame.quit()
