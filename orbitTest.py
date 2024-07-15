@@ -22,8 +22,7 @@ planets = [
 clock = pygame.time.Clock()
 
 resolution = (2000,2000)
-# pygame.display.set_mode(resolution, pygame.RESIZABLE)
-# pygame.display.set_mode(resolution, pygame.FULLSCREEN)
+pygame.display.set_mode(resolution, pygame.FULLSCREEN)
 pygame.display.set_caption('Solar System')
 
 value = 0
