@@ -6,7 +6,7 @@ import math
 
 #todo:
 #
-#
+#intro screen
 #
 #
 #
@@ -60,8 +60,8 @@ scale_summand = 0
 
 
 #position sun
-sun_x = 900
-sun_y = 470
+sun_x = 750
+sun_y = 420
 
 
 # Create angle variables for each planet
@@ -343,6 +343,10 @@ while run:
 					scale_saturn = 10
 					scale_uranus = 10
 					scale_neptune = 10
+
+					sun_x = 900
+					sun_y = 470
+
      
 					show_moon = False
 					real_distance = True
@@ -367,6 +371,9 @@ while run:
 					scale_saturn = 116460 / 4000
 					scale_uranus = 50724 / 4000
 					scale_neptune = 49244 / 4000
+     
+					sun_x = 750
+					sun_y = 420
      
 					show_moon = True
 					real_distance = False
