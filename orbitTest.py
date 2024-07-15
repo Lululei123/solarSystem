@@ -77,7 +77,11 @@ scale_neptune = 49 # Real diameter: 49'244 km
 
 while run:
 	clock.tick(120)
-
+	#create introduction screen explaining the controls
+	# r = real size
+	# alt + f4 = close
+	# esc = close
+	# space = pause
 	#add sun
 	
 	"""
@@ -101,7 +105,8 @@ while run:
 	y = (y * math.sin(angle_mercury) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_mercury: angle of rotation
 	window.fill((0, 0, 0))
 	window.blit(mercury, (x, y))
- 
+
+
 	x = radius_venus
 	y = radius_venus
 	venus = pygame.transform.scale(planets[2], (scale_venus , scale_venus))
@@ -110,7 +115,8 @@ while run:
 	x = (x * math.cos(angle_venus) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_venus: angle of rotation
 	y = (y * math.sin(angle_venus) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_venus: angle of rotation
 	window.blit(venus, (x, y))
-
+ 
+ 
 	x = radius_earth
 	y = radius_earth
 	earth = pygame.transform.scale(planets[3], (scale_earth , scale_earth))
@@ -119,6 +125,7 @@ while run:
 	x = (x * math.cos(angle_earth) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_earth: angle of rotation
 	y = (y * math.sin(angle_earth) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_earth: angle of rotation
 	window.blit(earth, (x, y))
+
 
 	x = radius_mars
 	y = radius_mars
@@ -129,6 +136,7 @@ while run:
 	y = (y * math.sin(angle_mars) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_mars: angle of rotation
 	window.blit(mars, (x, y))
 
+
 	x = radius_jupiter
 	y = radius_jupiter
 	jupiter = pygame.transform.scale(planets[5], (scale_jupiter , scale_jupiter))
@@ -137,6 +145,7 @@ while run:
 	x = (x * math.cos(angle_jupiter) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_jupiter: angle of rotation
 	y = (y * math.sin(angle_jupiter) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_jupiter: angle of rotation
 	window.blit(jupiter, (x, y))
+
 
 	x = radius_saturn
 	y = radius_saturn
@@ -147,6 +156,7 @@ while run:
 	y = (y * math.sin(angle_saturn) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_saturn: angle of rotation
 	window.blit(saturn, (x, y))
 
+
 	x = radius_uranus
 	y = radius_uranus
 	uranus = pygame.transform.scale(planets[7], (scale_uranus , scale_uranus))
@@ -155,6 +165,7 @@ while run:
 	x = (x * math.cos(angle_uranus) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_uranus: angle of rotation
 	y = (y * math.sin(angle_uranus) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_uranus: angle of rotation
 	window.blit(uranus, (x, y))
+
 
 	x = radius_neptune
 	y = radius_neptune
@@ -165,18 +176,24 @@ while run:
 	y = (y * math.sin(angle_neptune) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_neptune: angle of rotation
 	window.blit(neptune, (x, y))
  
+ 
 	x = sun_x
 	y = sun_y
 	sun = pygame.transform.scale(planets[0] , (scale_sun , scale_sun))
 	window.blit(sun, (x, y))
 	
-	sun = pygame.transform.scale(planets[0] , (2 , 1500))
-	window.blit(sun, (x + scale_sun/2, y + scale_sun/2))
-	sun = pygame.transform.scale(planets[0] , (2 , 1500))
-	window.blit(sun, (x + scale_sun/2, y + scale_sun/2))
-	
  
-	sleep(0.1)
+	#debug images 
+ 
+	# sun = pygame.transform.scale(planets[0] , (2 , 1500))
+	# window.blit(sun, (x + scale_sun/2, y + scale_sun/2))
+	# sun = pygame.transform.scale(planets[0] , (1500 , 2))
+	# window.blit(sun, (x + scale_sun/2, y + scale_sun/2))
+	
+	#...
+ 
+
+	sleep(0.09)
  
 
 		# Update the angle variables for each planet
@@ -192,7 +209,9 @@ while run:
 	# ...
  
 	for event in pygame.event.get():
-
+		#if r key is pressed make the planets in real size_scale
+		#if right arrow key is pressed increase the speed of the planets
+		#if left arrow key is pressed decrease the speed of the planets
 		if event.type == pygame.QUIT:
 			run = False
 			pygame.quit()
