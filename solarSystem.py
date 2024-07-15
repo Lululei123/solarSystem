@@ -103,28 +103,28 @@ while run:
 	"""
 	x = radius_mercury
 	y = radius_mercury
-	mercury = pygame.transform.scale(planets[1], (scale_mercury , scale_mercury))
+	mercury = pygame.transform.scale(planets[1], (scale_mercury + scale_summand , scale_mercury + scale_summand))
 	x_center = sun_x + scale_sun/2 - scale_mercury/2
 	y_center = sun_y + scale_sun/2 - scale_mercury/2
 	x = (x * math.cos(angle_mercury) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_mercury: angle of rotation
 	y = (y * math.sin(angle_mercury) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_mercury: angle of rotation
 	window.fill((0, 0, 0))
-	window.blit(mercury, (x, y))
+	window.blit(mercury, (x - scale_mercury/2, y - scale_mercury/2))
 
 
 	x = radius_venus
 	y = radius_venus
-	venus = pygame.transform.scale(planets[2], (scale_venus , scale_venus))
+	venus = pygame.transform.scale(planets[2], (scale_venus + scale_summand, scale_venus + scale_summand))
 	x_center = sun_x + scale_sun/2 - scale_venus/2
 	y_center = sun_y + scale_sun/2 - scale_venus/2
 	x = (x * math.cos(angle_venus) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_venus: angle of rotation
 	y = (y * math.sin(angle_venus) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_venus: angle of rotation
-	window.blit(venus, (x, y))
+	window.blit(venus, (x - scale_venus/2, y - scale_venus/2))
  
  
 	x = radius_earth
 	y = radius_earth
-	earth = pygame.transform.scale(planets[3], (scale_earth , scale_earth))
+	earth = pygame.transform.scale(planets[3], (scale_earth + scale_summand , scale_earth + scale_summand))
 	x_center = sun_x + scale_sun/2 - scale_earth/2
 	y_center = sun_y + scale_sun/2 - scale_earth/2
 	x = (x * math.cos(angle_earth) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_earth: angle of rotation
@@ -141,57 +141,57 @@ while run:
 
 	x = radius_mars
 	y = radius_mars
-	mars = pygame.transform.scale(planets[4], (scale_mars , scale_mars))
+	mars = pygame.transform.scale(planets[4], (scale_mars + scale_summand , scale_mars + scale_summand))
 	x_center = sun_x + scale_sun/2 - scale_mars/2
 	y_center = sun_y + scale_sun/2 - scale_mars/2
 	x = (x * math.cos(angle_mars) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_mars: angle of rotation
 	y = (y * math.sin(angle_mars) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_mars: angle of rotation
-	window.blit(mars, (x, y))
+	window.blit(mars, (x - scale_mars/2, y - scale_mars/2))
 
 
 	x = radius_jupiter
 	y = radius_jupiter
-	jupiter = pygame.transform.scale(planets[5], (scale_jupiter , scale_jupiter))
+	jupiter = pygame.transform.scale(planets[5], (scale_jupiter + scale_summand , scale_jupiter + scale_summand))
 	x_center = sun_x + scale_sun/2 - scale_jupiter/2
 	y_center = sun_y + scale_sun/2 - scale_jupiter/2
 	x = (x * math.cos(angle_jupiter) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_jupiter: angle of rotation
 	y = (y * math.sin(angle_jupiter) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_jupiter: angle of rotation
-	window.blit(jupiter, (x, y))
+	window.blit(jupiter, (x - scale_jupiter/2, y - scale_jupiter/2))
 
 
 	x = radius_saturn
 	y = radius_saturn
-	saturn = pygame.transform.scale(planets[6], (scale_saturn , scale_saturn))
+	saturn = pygame.transform.scale(planets[6], (scale_saturn + scale_summand , scale_saturn + scale_summand))
 	x_center = sun_x + scale_sun/2 - scale_saturn/2
 	y_center = sun_y + scale_sun/2 - scale_saturn/2
 	x = (x * math.cos(angle_saturn) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_saturn: angle of rotation
 	y = (y * math.sin(angle_saturn) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_saturn: angle of rotation
-	window.blit(saturn, (x, y))
+	window.blit(saturn, (x - scale_saturn/2, y - scale_saturn/2))
 
 
 	x = radius_uranus
 	y = radius_uranus
-	uranus = pygame.transform.scale(planets[7], (scale_uranus , scale_uranus))
+	uranus = pygame.transform.scale(planets[7], (scale_uranus + scale_summand , scale_uranus + scale_summand))
 	x_center = sun_x + scale_sun/2 - scale_uranus/2
 	y_center = sun_y + scale_sun/2 - scale_uranus/2
 	x = (x * math.cos(angle_uranus) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_uranus: angle of rotation
 	y = (y * math.sin(angle_uranus) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_uranus: angle of rotation
-	window.blit(uranus, (x, y))
+	window.blit(uranus, (x - scale_uranus/2, y - scale_uranus/2))
 
 
 	x = radius_neptune
 	y = radius_neptune
-	neptune = pygame.transform.scale(planets[8], (scale_neptune , scale_neptune))
+	neptune = pygame.transform.scale(planets[8], (scale_neptune + scale_summand , scale_neptune + scale_summand))
 	x_center = sun_x + scale_sun/2 - scale_neptune/2
 	y_center = sun_y + scale_sun/2 - scale_neptune/2
 	x = (x * math.cos(angle_neptune) + x_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_neptune: angle of rotation
 	y = (y * math.sin(angle_neptune) + y_center) #x/y: radius of orbit, +[value]: coordinates - center of orbit, angle_neptune: angle of rotation
-	window.blit(neptune, (x, y))
+	window.blit(neptune, (x - scale_neptune/2, y - scale_neptune/2))
  
  
 	x = sun_x
 	y = sun_y
-	sun = pygame.transform.scale(planets[0] , (scale_sun , scale_sun))
+	sun = pygame.transform.scale(planets[0] , (scale_sun , scale_sun ))
 	window.blit(sun, (x, y))
 	
  
@@ -209,14 +209,15 @@ while run:
  
 
 		# Update the angle variables for each planet
-	angle_mercury += dist_around_sun /88 * speed_multiplier		#is the speed of a surrounding time of 88 days
-	angle_venus += dist_around_sun /225 * speed_multiplier	#is the speed of a surrounding time of 225 days
-	angle_earth += dist_around_sun /365 * speed_multiplier		#is the speed of a surrounding time of 365 days
-	angle_mars += dist_around_sun /687 * speed_multiplier		#is the speed of a surrounding time of 687 days
-	angle_jupiter += dist_around_sun /4333 * speed_multiplier	#is the speed of a surrounding time of 4333 days
-	angle_saturn += dist_around_sun /10759 * speed_multiplier	#is the speed of a surrounding time of 10759 days
-	angle_uranus += dist_around_sun /30687 * speed_multiplier	#is the speed of a surrounding time of 30687 days
-	angle_neptune += dist_around_sun /60190 * speed_multiplier	#is the speed of a surrounding time of 60190 days
+	angle_mercury += circumnavigation /88 * speed_multiplier		#is the speed of a surrounding time of 88 days
+	angle_venus += circumnavigation /225 * speed_multiplier	#is the speed of a surrounding time of 225 days
+	angle_earth += circumnavigation /365 * speed_multiplier		#is the speed of a surrounding time of 365 days
+	angle_moon += circumnavigation /27 * speed_multiplier		#is the speed of a surrounding time of 27 days
+	angle_mars += circumnavigation /687 * speed_multiplier		#is the speed of a surrounding time of 687 days
+	angle_jupiter += circumnavigation /4333 * speed_multiplier	#is the speed of a surrounding time of 4333 days
+	angle_saturn += circumnavigation /10759 * speed_multiplier	#is the speed of a surrounding time of 10759 days
+	angle_uranus += circumnavigation /30687 * speed_multiplier	#is the speed of a surrounding time of 30687 days
+	angle_neptune += circumnavigation /60190 * speed_multiplier	#is the speed of a surrounding time of 60190 days
 
 	# ...
  
@@ -226,24 +227,137 @@ while run:
 			
 			#speed up
 			if event.key == K_RIGHT:
-				speed_multiplier += 0.1
+				speed_multiplier += 0.2
 				if speed_multiplier > 10:
 					speed_multiplier = 10
 
 			#speed down
 			elif event.key == K_LEFT:
-				speed_multiplier -= 0.1
+				speed_multiplier -= 0.2
 				if speed_multiplier < 0:
 					speed_multiplier = 0
+     
+			#scale up
+			elif event.key == K_UP and not real_scale:
+				scale_summand += 2
+	
+ 
+			#scale down
+			elif event.key == K_DOWN and not real_scale:
+				scale_summand -= 2
+				if scale_summand < 0:
+					scale_summand = 0
+    
+    
+			#reset all, except position
+			elif event.key == K_r:
+				speed_multiplier = 1
+				scale_summand = 0
+				scale_temp = 0
+     
+     
+			elif KMOD_ALT and event.key == K_z:
+				#up scaled
+				if real_scale and not real_distance:
+					scale_sun = 280
+					scale_mercury = 4
+					scale_venus = 12
+					scale_earth = 12
+					scale_moon = 3.4
+					scale_mars = 6
+					scale_jupiter = 139
+					scale_saturn = 116
+					scale_uranus = 50
+					scale_neptune = 49
+	
+					radius_mercury = 200
+					radius_venus = 250 
+					radius_earth = 300 
+					radius_moon = 50
+					radius_mars = 350 
+					radius_jupiter = 400 
+					radius_saturn = 450 
+					radius_uranus = 500 
+					radius_neptune = 550 
+     
+					real_scale = False
+					scale_summand = scale_temp
+				#real size
+				else:
+					scale_sun = 1392000 / 4000
+					scale_mercury = 4879 / 4000
+					scale_venus = 12104 / 4000
+					scale_earth = 12756 / 4000
+					scale_moon = 3474 / 4000
+					scale_mars = 6792 / 4000
+					scale_jupiter = 139820 / 4000
+					scale_saturn = 116460 / 4000
+					scale_uranus = 50724 / 4000
+					scale_neptune = 49244 / 4000
+									
+					real_scale = True
+					scale_temp = scale_summand
+					scale_summand = 0
+
+
+			elif KMOD_ALT and event.key == K_d:
+				if not real_distance and not real_scale:
+					radius_mercury = 6.5
+					radius_venus = 12
+					radius_earth = 16.6
+					radius_mars = 25.3
+					radius_jupiter = 86.6
+					radius_saturn = 159.6
+					radius_uranus = 320.3
+					radius_neptune = 500.83
+     
+					scale_sun = 10
+					scale_mercury = 10
+					scale_venus = 10
+					scale_earth = 10
+					scale_moon = 10
+					scale_mars = 10
+					scale_jupiter = 10
+					scale_saturn = 10
+					scale_uranus = 10
+					scale_neptune = 10
+     
+					show_moon = False
+					real_distance = True
+				else:
+					radius_mercury = 200
+					radius_venus = 250 
+					radius_earth = 300 
+					radius_moon = 50
+					radius_mars = 350 
+					radius_jupiter = 400 
+					radius_saturn = 450 
+					radius_uranus = 500 
+					radius_neptune = 550
+     
+					scale_sun = 1392000 / 4000
+					scale_mercury = 4879 / 4000
+					scale_venus = 12104 / 4000
+					scale_earth = 12756 / 4000
+					scale_moon = 3474 / 4000
+					scale_mars = 6792 / 4000
+					scale_jupiter = 139820 / 4000
+					scale_saturn = 116460 / 4000
+					scale_uranus = 50724 / 4000
+					scale_neptune = 49244 / 4000
+     
+					show_moon = True
+					real_distance = False
+    
 			
 			#pause
 			elif event.key == K_SPACE:
 				if not pause:
-					temp = speed_multiplier
+					speed_temp = speed_multiplier
 					speed_multiplier = 0
 					pause = True
 				elif pause:
-					speed_multiplier = temp
+					speed_multiplier = speed_temp
 					pause = False
      
 			#close
